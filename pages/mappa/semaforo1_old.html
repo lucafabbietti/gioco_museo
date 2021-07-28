@@ -1,45 +1,35 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mappa situazione climatica attuale</title>
+    <title>Alterazione della circolazione atlantica</title>
 </head>
 <link rel="stylesheet" href="/styles/gioco/styleMappa.css">
-<link rel="stylesheet" href="/styles/gioco/font.css">
+<link rel="stylesheet" href="/styles/font.css">
 <script src="/scripts/scriptMappa.js"></script>
+
+
 
 <body>
 
-    <!-- BACKGROUND MAPPA GENERALE -->
-    <div class="background-mappa">
-        <img src="/assets/imgMappa/MAP.jpg" width="1920px" height="1080px">
-        <a href="">Torna alla Home</a>
-    </div> 
-   
-
-
-
-
-
-    <!-- BACKGROUND MAPPA SEMAFORO 1 -->
-    <div id="semaforo1" style="display: none;">
-        <div class="background-mappa">
-            <img src="/assets/imgMappa/MAP1.jpg" width="1920px" height="1080px">
-        </div>
-        <div class="semafori">
-            <a href="" class="semaforo1"></a>
-        </div>
-    </div>
+    <!-- BACKGROUND MAPPA -->
+    <section class="background-mappa">
+        <img src="/assets/imgMappa/MAP1.jpg" width="1920px" height="1080px">
+        <a href="/pages/mappa/index-semafori.html">Torna indietro</a>
+    </section>
 
 
     <!-- FLAG -->
-    <div class="flag" >
+    <div class="flag">
         <a href="">X Chiudi</a>
-    
-        <div class="flag-text">
+        <div class="text">
             <h1>Alterazione della circolazione atlantica</h1>
+
             <p id="p1" style="display: inline;">L'Atlantic Meridional Overturning Circulation (AMOC) fa parte di una più
                 ampia rete di circolazione oceanica che trasporta calore in tutto il mondo. Si tratta di un sistema di
                 correnti nell'Oceano Atlantico con due componenti principali: la prima è il flusso di acqua calda e
@@ -50,14 +40,22 @@
             <p id="p3" style="display: none;">Questo rende l'acqua più leggera e quindi meno capace di andare in
                 profondità rallentando così l'intero motore della circolazione.</p>
             <p id="p4" style="display: none;">testo 4</p>
-    
-            <div>
+
+            <div class="button-avanti-indietro">
                 <img onclick="contatore()" src="/assets/imgMappa/right-arrow.png" alt=""
                     style="height: 70px; margin-top: 20px; float: right;">
                 <img onclick="indietro()" src="/assets/imgMappa/left-arrow.png" alt=""
                     style="height: 70px; margin-top: 20px; float: left;">
             </div>
+
         </div>
-    </div>
+
+
 </body>
+
+
+
+
 </html>
+
+-->
