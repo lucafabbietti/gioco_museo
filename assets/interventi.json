@@ -1,0 +1,8 @@
+[
+    {
+        id: 0,
+        codice_intervento: 1,
+        nome_intervento: "sassi",
+        costo: 100
+    }
+]
