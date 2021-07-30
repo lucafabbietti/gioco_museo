@@ -20,40 +20,55 @@ input,select{vertical-align:middle}
 /* END CSS RESET */
 
 
-
-
-.background-mappa img{
-    display: block;
+*{
+    font-family: 'Barlow', sans-serif;
 }
 
-.background-mappa a{
+a{
     position: absolute;
-    left: 10px;
+    z-index: 9999;
+    left: 15px;
     top: 10px;
     border: 2px solid red;
     padding: 20px;
-    border-radius: 100px;
+    border-radius: 10px;
     text-decoration: none;
     color: red;
     font-size: 30px;
 }
-.background-mappa a:hover{
-    color: white;
-    background-color: rgb(0, 170, 248);
-    border: 2px solid white;
-    font-size: 30px;
+img{
+    display: block;
 }
 
-.semafori a{
+
+
+
+
+
+/* POSIZIONAMENTO BOTTONI SEMAFORI */
+/* ------------------------------- */ 
+
+.semaforo1{
     position: absolute;
     z-index: 9999;
     top:255px;
     left: 670px;
     height: 125px;
     width: 80px;
-    background-color: rgba(0, 0, 0, 0.315);
+    border: none;
+    background-color: rgba(0, 0, 0, 0.267);
 }
 
+.semaforo2{
+    position: absolute;
+    z-index: 9999;
+    top:885px;
+    left: 190px;
+    height: 125px;
+    width: 80px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.267);
+}
 
 
 /* STILIZZAZIONE FLAG INFORMATIVA */
@@ -61,34 +76,24 @@ input,select{vertical-align:middle}
 
 
 .flag{
+    overflow: scroll;
     z-index: 9999;
     position: absolute;
     top: 40%;
     right: 5%;
     width: 58%;
-    height: 58%;
+    height: 55%;
+    border-radius: 20px;
+    box-shadow: 10px  10px 15px black;
     background-color: rgba(255, 255, 255, 0.75);
-}
-
-.flag a{
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    border: 2px solid red;
-    padding: 20px;
-    border-radius: 100px;
-    text-decoration: none;
-    color: red;
-    font-size: 15px;
 }
 
 .flag-text{
     position: absolute;
     margin: 20px;
-    top: 30px;
+    top: 50px;
     left: 50px;
-    width: 80%;
-    font-family: 'Barlow', sans-serif;
+    width: 90%;
 }
 .flag-text h1{
     font-size: 48px;
@@ -98,9 +103,46 @@ input,select{vertical-align:middle}
 .flag-text p{
     font-size: 30px;
 }
+/* --- */ 
 
-.flag img{
-    position: relative;
+
+/* STILIZZAZIONE PULSANTI DI CONTROLLO */
+/* ----------------------------------- */  
+.controlli{
+    margin-top: 20px;
+    text-align: center;
 }
 
-/* ------------------------------ */     
+.controlli button{
+    display: none;
+    position: absolute;
+    margin-top: 70px;
+    background-color: transparent;
+    position: initial;
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 10px;
+    color: red;
+    font-size: 20px;
+    width: 150px;
+}
+
+.controlli button:active{
+    background-color: red;
+    color: white;
+}
+
+.controlli p{
+    width: 100%;
+    position: absolute;
+    top: 330px;
+    left: 0;
+    padding-bottom: 20px;
+}
+
+#nascondi{
+    background-color: rgba(255, 0, 0, 0.822);
+    color: white;
+}
+
+/* --- */ 
