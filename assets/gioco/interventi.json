@@ -2,13 +2,13 @@
     {
         "id": 0,
         "codice_intervento": 1,
-        "nome_intervento": "sassi",
+        "descrizione": "sassi",
         "costo": 100
     },
     {
         "id": 1,
         "codice_intervento": 2,
-        "nome_intervento": "brecci",
+        "descrizione": "brecci",
         "costo": 200
     }
 ]
