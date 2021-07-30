@@ -72,40 +72,37 @@ $(document).ready(function(){
         $("#start_btn").click(function() {
 
             //se non ci sono errori nella lettura del json eventi, inizio la simulazione
-            if(!carica_eventi())
+            if(carica_eventi())
             {
                 //nascondo la tabella
                 $("#table_master").hide();
             
                 simulazione();
             }
+            else
+            {
+                alert("errore sulla lettura di eventi.json");
+            }
             
-
         });
-
-
-
 
     }).fail(function(){console.log("errore sulla lettura di interventi.json")});
 
-    function carica_eventi()
+});
+
+function carica_eventi()
     {
         $.getJSON("../../assets/gioco/eventi.json", function(result){
-
-
-            return true;
+            
         }).fail(function() 
         {
-            alert("errore sulla lettura di eventi.json");
             return false;
         });
+        return true;
+        
     }
 
     function simulazione()
     {
-        alert("bona raga");
+
     }
-
-
-
-});
