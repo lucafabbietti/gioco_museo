@@ -4,6 +4,11 @@ FINESTRA CON LO SCRITTO E UN ULTERIORE PUNTO IN CUI APRIRE LE POSSIBILI
 CONSEGUENZE CON Ciò CHE è SCRITTO EVIDENZIATO IN ROSA in un punto inserire pulsante
 per la scelta del gioco di simulazione
 
+# GIOCO MUSEO ONLINE
+https://museo.mvbdev.cloud/
+
+
+# SEMAFORO 1 
 
 Alterazione della circolazione atlantica TRA IL GOLFO DEL MESSICO E IL NORD ATLANTICO
 L'Atlantic Meridional Overturning Circulation (AMOC) fa parte di una più ampia rete di circolazione
@@ -25,6 +30,8 @@ Potremmo osservare inoltre uno spostamento della zona di convergenza intertropic
 vicino all'equatore
 
 
+# SEMAFORO 2
+
 Instabilità della calotta glaciale antartica occidentale NEL MARE DI AMUNDSEN
 La calotta glaciale antartica occidentale (WAIS) è una porzione dell’Antartide che detiene
 abbastanza ghiaccio per cambiare le coste di tutto il mondo. La maggior parte dei ghiacciai
@@ -42,6 +49,9 @@ antartiche alimentate dalla fusione del ghiaccio influenza la densità delle acq
 influenzando il clima in superficie ma soprattutto, potrebbero alterarsi i tempi dei cicli biologici iniziando dal fitoplancton, la base fondamentale
 della rete alimentare antartica.
 
+
+
+# SEMAFORO 3 
 
 Distruzione della foresta pluviale amazzonica NELL’AREA AMAZZONICA
 La foresta pluviale amazzonica è la più grande foresta pluviale del mondo, svolge un ruolo
@@ -64,6 +74,7 @@ CONSEGUENZE: transizione dell’area verso la Savana con grave perdita di biodiv
 Diminuzione delle precipitazioni e aumento di CO2 nell’atmosfera.
 
 
+# SEMAFORO 4 
 
 Spostamento dei monsoni nell'Africa occidentale TUTTO IL SAHEL IN UNA FASCIA DAL MAR ROSSO ALL’ATLANTICO
 I monsoni sono venti a carattere stagionale che soffiano in prevalenza nelle zone tropicali, con
@@ -77,6 +88,9 @@ L’aumento delle temperature potrebbe provocare uno spostamento della direzione
 aumenterebbe le precipitazioni (addirittura potrebbe riapparire la vegetazione in alcune parti a sud del Sahara) ma potrebbe anche rendere più
 rigidi e lunghi i periodi di siccità che si scatenano quando i monsoni ritardano il loro arrivo causando drammatiche carestie.
 
+
+
+# SEMAFORO 5
 
 Scioglimento del permafrost TRA L’ESTREMO NORD EUROPA, LA SIBERA E L’AMERICA SETTENTRIONALE
 il Permafrost è un tipo di terreno ghiacciato che si trova in aree in cui le temperature
@@ -93,6 +107,9 @@ lo scioglimento di questi terreni potrebbe riportare in circolazione virus e mic
 migliaia di anni. Nel corso dei prossimi decenni si teme, inoltre, che le acque di fusione del permafrost potrebbero contribuire
 a raffreddare i mari della regione, e ad abbassarne la salinità.
 
+
+
+# SEMAFORO 6 
 
 Scomparsa delle barriere coralline PACIFICO CENTRALE E COSTA ORIENTALE AUSTRALIANA
 I coralli sono colonie di Antozoi (polipi) che vivono in simbiosi con alghe unicellulari (zooxantelle)
@@ -114,6 +131,9 @@ cambiamenti nella circolazione oceanica.
 
 
 
+
+# SEMAFORO 7
+
 Spostamento del monsone indiano estivo INDIA
 I monsoni sono venti periodici che condizionano le precipitazioni atmosferiche dando
 origine, dove agiscono, a due stagioni che si alternano nel corso dell’anno a seconda
@@ -132,6 +152,9 @@ duraturi i periodi di siccità che si scatenano quando i venti ritardano il loro
 penetrerebbero sempre più nell’entroterra spostando la loro area di influenza.
 
 
+
+
+# SEMAFORO 8
 
 Scioglimento della calotta glaciale in Groenlandia GROENLANDIA
 La Groenlandia è l’isola più grande del mondo. La perdita progressiva della sua calotta
@@ -153,6 +176,9 @@ molte città costiere del mondo e con conseguenti migrazioni di massa.
 
 
 
+
+# SEMAFORO 9
+
 Spostamento graduale delle foreste boreali UNA FASCIA CONTINUA (TRA IL 50° E IL 70° LATITUDINE NORD) CHE
 PARTE DAL CANADA ATTRAVERSA L’EUROPA SETTENTRIONALE(NORVEGIA, FINLANDIA E SVEZIA) E ARRIVA FINO IN SIBERIA
 Le foreste boreali, composte principalmente da specie che resistono alle basse
@@ -171,6 +197,9 @@ CONIFERE) IN QUESTA FASCIA. APPARENTEMENTE L’AUMENTO DELLA COPERTURA FORESTALE
 SUL CLIMA REGIONALE MODIFICANDO LA TEMPERATURA SUPERFICIALE IN QUANTO VIENE ASSORBITA PIU’ LUCE.
 
 
+
+
+# SEMAFORO 10
 
 Desertificazione
 nelle zone della mappa di riferimento visualizzata a questo collegamento Visualising a Warming World | Connect4Climate indicare le aree ad alto

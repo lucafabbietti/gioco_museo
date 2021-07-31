@@ -7,57 +7,81 @@
     <title>Mappa situazione climatica attuale</title>
 </head>
 <link rel="stylesheet" href="/styles/gioco/styleMappa.css">
-<link rel="stylesheet" href="/styles/gioco/font.css">
+<link rel="stylesheet" type="text/css" href="/styles/font.css">
 <script src="/scripts/scriptMappa.js"></script>
 
 <body>
 
+
+    <a href="/pages/mappa/index-semafori.html">Torna alla Home</a>
+    
     <!-- BACKGROUND MAPPA GENERALE -->
-    <div class="background-mappa">
+    <div style="display: inline;" id="mappaGenerale">
         <img src="/assets/imgMappa/MAP.jpg" width="1920px" height="1080px">
-        <a href="">Torna alla Home</a>
-    </div> 
-   
-
-
-
-
-
-    <!-- BACKGROUND MAPPA SEMAFORO 1 -->
-    <div id="semaforo1" style="display: none;">
-        <div class="background-mappa">
+    </div>
+    
+    <!-- BACKGROUND MAPPE SEMAFORI -->
+    <div id="mappe">
+        <!--SEMAFORO 1-->
+        <div  id="map1" style="display: none;">
             <img src="/assets/imgMappa/MAP1.jpg" width="1920px" height="1080px">
         </div>
-        <div class="semafori">
-            <a href="" class="semaforo1"></a>
+        <!--SEMAFORO 2-->
+        <div  id="map2" style="display: none;">
+            <img src="/assets/imgMappa/MAP2.jpg" width="1920px" height="1080px">
+        </div>
+    
+    
+    </div>
+
+    
+    <!-- SEMAFORI -->
+    <div >
+        <div class="semaforiStyle" id="buttonSemafori">
+            <!-- SEMAFORO 1 -->
+            <button class="semaforo1" onclick="funzioneSemaforo1()"> </button>
+            <!-- SEMAFORO 2 -->
+            <button class="semaforo2" onclick="funzioneSemaforo2()"> </button>
         </div>
     </div>
 
-
-    <!-- FLAG -->
-    <div class="flag">
-        <a href="">X Chiudi</a>
     
+
+    <!-- FLAG SEMAFORO 1 -->
+    <div class="flag" id="flagSemaforo1" style="display: none;">
+        <a href="/pages/mappa/index-semafori.html" style="font-size: 20px;">X Chiudi</a>
         <div class="flag-text">
-            <h1>Alterazione della circolazione atlantica</h1>
-            <p id="p1" style="display: inline;">L'Atlantic Meridional Overturning Circulation (AMOC) fa parte di una più
+            <h1 id="tSem1" style="display: none;">Alterazione della circolazione atlantica</h1>
+            <p id="p1S1" style="display: none;">L'Atlantic Meridional Overturning Circulation (AMOC) fa parte di una più
                 ampia rete di circolazione oceanica che trasporta calore in tutto il mondo. Si tratta di un sistema di
                 correnti nell'Oceano Atlantico con due componenti principali: la prima è il flusso di acqua calda e
                 salata negli strati superiori dell'oceano verso nord partendo dal Golfo del Messico e alimentato dalla
                 Corrente nordatlantica.</p>
-            <p id="p2" style="display: none;">La seconda è il raffreddamento dell'acqua che avviene alle alte latitudini
+            <p id="p2S1" style="display: none;">La seconda è il raffreddamento dell'acqua che avviene alle alte latitudini
                 dell'Atlantico: l’acqua più densa affonda e ritorna verso l’equatore in profondità.</p>
-            <p id="p3" style="display: none;">Questo rende l'acqua più leggera e quindi meno capace di andare in
+            <p id="p3S1" style="display: none;">Questo rende l'acqua più leggera e quindi meno capace di andare in
                 profondità rallentando così l'intero motore della circolazione.</p>
-    
-            <div>
+
+            <div class="controlli">
                 <img onclick="clickAvanti()" id="avanti" src="/assets/imgMappa/right-arrow.png" alt=""
-                    style="height: 70px; margin-top: 20px; float: right;">
+                    style="height: 70px; float: right;" style="display: none;">
                 <img onclick="clickIndietro()" id="indietro" src="/assets/imgMappa/left-arrow.png" alt=""
-                    style="height: 70px; margin-top: 20px; float: left;">
+                    style="height: 70px; float: left; display: none;">
+                <button  onclick="conseguenzeSemaforo1()" id="conseguenze" style="display: none;">Conseguenze</button>
+                <button  onclick="conseguenzeSemaforo1()" id="nascondi" style="display: none;">Nascondi</button>
+                <p class="pConseguenze" id="pConseguenzeSemaforo1" style=" color: red; display: none;">Mentre nell’Atlantico settentrionale si potrebbe generare un generale raffreddamento,
+                    minore evaporazione e quindi meno precipitazioni, nell'Atlantico meridionale si assisterebbe a un riscaldamento con conseguente aumento delle
+                    inondazioni, delle emissioni di metano e della siccità, e, di conseguenza, un impatto negativo sulla produzione alimentare e sui sistemi umani.
+                    Potremmo osservare inoltre uno spostamento della zona di convergenza intertropicale, la grande area di bassa pressione che circonda la Terra
+                    vicino all'equatore</p>
             </div>
         </div>
     </div>
+
+    
+
+
+
     </body>
     
     </html>
