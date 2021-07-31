@@ -4,8 +4,12 @@
             Gioco
         </title>
         <script src="../../scripts/jquery.min.js"></script>
-        <script src="../../scripts/gioco/gioco.js"></script>
         <link rel="stylesheet" href="../../styles/gioco/gioco.css">
+        
+        <script src="../../assets/gioco/interventi_data.js"></script>
+        <script src="../../assets/gioco/eventi_data.js"></script>
+
+        <script src="../../scripts/gioco/gioco.js"></script>
     </head>
 
     <body>
@@ -15,18 +19,18 @@
             </div>
             <div table id="table">
                 <tr>
-                    <th>
+                    <td>
                         Checkboxes
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         N. Intervento
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         Tipo di Intervento
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         Costo Intervento
-                    </th>
+                    </td>
                 </tr>
                 <!-- qua va inserito il ciclo di creazione elementi -->
 
@@ -34,6 +38,11 @@
             <div button id="start_btn">
                 Start
             </div>
+        </div>
+        <div id="paragraph_master" style="display: none;">
+            <p id="paragraph_description">
+                test_paragrafo
+            </p>
         </div>
     </body>
 </html>

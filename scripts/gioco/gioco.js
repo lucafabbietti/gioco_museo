@@ -1,56 +1,61 @@
-$(document).ready(function(){
 
+$(document).ready(function()
+{
+
+    interventi = JSON.parse(_interventi);
+    eventi = JSON.parse(_eventi);
+    interventi_scelti = [];
+    costo_max = 80000;
     //caricamento interventi da file json e aggiunta di righe sulla tabella
 
-    var interventi = "";
-    var eventi = "";
+    console.log(interventi);
+    console.log(eventi);
 
-    var costo_max = 200;
-
-    $.getJSON("../../assets/gioco/interventi.json", function(result){
-        interventi = result;
-        result.forEach(element => {
+    for(i = 0; i < interventi.length; i++)
+    {
+        var row = "";
             
-            var row = "";
-            
-            //creo la nuova riga
-            row += "<tr>";
+        //creo la nuova riga
+        row += "<tr>";
 
-            //aggiungo la checkbox
-            row += "<td> <input type=\"checkbox\" class=\"check\" id=\"check_"+ element.id +"\"> </td>";
-            //console.log(element.id);
+        //aggiungo la checkbox
+        row += "<td> <input type=\"checkbox\" class=\"check\" id=\"check_"+ interventi[i].id +"\"> </td>";
+        //console.log(interventi[i].id);
 
-            //aggiungo il tag dell'intervento
-            row += "<td>"+ element.codice_intervento +"</td>"
-            //console.log(element.codice_intervento);
+        //aggiungo il tag dell'intervento
+        row += "<td>"+ interventi[i].codice_intervento +"</td>"
+        //console.log(interventi[i].codice_intervento);
 
-            //aggiungo la descrizione dell'intervento
-            row += "<td>"+ element.descrizione +"</td>"
-            //console.log(element.descrizione);
+        //aggiungo la descrizione dell'intervento
+        row += "<td>"+ interventi[i].descrizione +"</td>"
+        //console.log(interventi[i].descrizione);
 
-            //aggiungo il costo dell'intervento
-            row += "<td>"+ element.costo +"</td>"
-            //console.log(element.costo);
+        //aggiungo il costo dell'intervento
+        row += "<td>"+ interventi[i].costo +"</td>"
+        //console.log(interventi[i].costo);
 
-            //console.log(row);
-            
-            //aggiungo la riga alla tabella
-            $("#table").append(row);       
-        });
+        //console.log(row);
+        
+        //aggiungo la riga alla tabella
+        $("#table").append(row);       
+    }
 
         //aggiungo l'evento click a tutte le checkbox
 
         $(".check").click(function() {
             var costo = 0;
+            interventi_scelti = [];
 
             //controllo quale checkbox è selezionata ciclandole tutte, 
-            //poi in base a quale è selezionata calcolo il prezzo sommandole
+            //poi in base a quale è selezionata calcolo il prezzo sommandole,
+            //poi aggiungo i relativi codici a un vettore
 
             for(i = 0; i < interventi.length; i++)
             {
                 if($("#check_"+i).is(":checked"))
                 {
                     costo += interventi[i].costo;
+                    interventi_scelti.push(interventi[i].codice_intervento);
                 }
             }
 
@@ -58,10 +63,12 @@ $(document).ready(function(){
             //tutte le checkbox diventano unchecked e azzero il costo.
             if(costo > costo_max)
             {
-                alert("Hai superato il budget di 80000! Seleziona gli interventi con più attenzione!");
+                alert("Hai superato il budget di "+costo_max+"! Seleziona gli interventi con più attenzione!");
                 $(".check").prop( "checked", false );
                 costo = 0;
             }
+
+            
 
             //mostro il prezzo attuale sulla casella di testo
             $("#costo_totale").text(costo);
@@ -70,39 +77,15 @@ $(document).ready(function(){
 
         //aggiungo l'evento click al bottone di start
         $("#start_btn").click(function() {
-
-            //se non ci sono errori nella lettura del json eventi, inizio la simulazione
-            if(carica_eventi())
-            {
-                //nascondo la tabella
-                $("#table_master").hide();
             
-                simulazione();
-            }
-            else
-            {
-                alert("errore sulla lettura di eventi.json");
-            }
+            //nascondo la tabella
+            $("#table_master").hide();
+            
+            //avvio la simulazione
+            $("#paragraph_description").text(interventi_scelti);
+            $("#paragraph_master").show();
             
         });
-
-    }).fail(function(){console.log("errore sulla lettura di interventi.json")});
 
 });
 
-function carica_eventi()
-    {
-        $.getJSON("../../assets/gioco/eventi.json", function(result){
-            
-        }).fail(function() 
-        {
-            return false;
-        });
-        return true;
-        
-    }
-
-    function simulazione()
-    {
-
-    }
