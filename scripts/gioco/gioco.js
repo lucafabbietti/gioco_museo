@@ -6,6 +6,12 @@ $(document).ready(function()
     eventi = JSON.parse(_eventi);
     interventi_scelti = [];
     costo_max = 80000;
+
+    danni = 0;
+    danni_max = 15;
+
+    giri_simulazione = 0;
+
     //caricamento interventi da file json e aggiunta di righe sulla tabella
 
     console.log(interventi);
@@ -77,13 +83,91 @@ $(document).ready(function()
 
         //aggiungo l'evento click al bottone di start
         $("#start_btn").click(function() {
-            
+            danni = 0;
             //nascondo la tabella
             $("#table_master").hide();
             
             //avvio la simulazione
-            $("#paragraph_description").text(interventi_scelti);
+
             $("#paragraph_master").show();
+
+            while(danni < danni_max)
+            {
+                var i = Math.floor(Math.random() * 5);
+
+                console.log("random "+i);
+
+                console.log(eventi[i].id)
+
+                $("#paragraph_description").text(eventi[i].descrizione);
+
+                for(j = 0; j < eventi[i].danni_array.length; j++)
+                {
+                    if(eventi[i].danni_array[j].tipo == "minore")
+                    {
+                        var counter = 0;
+                        for(k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++ )
+                        {
+                            if(interventi_scelti.includes(eventi[i].danni_array[j].interventi[k]))
+                            {
+                                counter++;
+                            }
+                        }
+
+                        if(counter < eventi[i].danni_array[j].num_confronto)
+                        {
+                            danni += eventi[i].danni_array[j].danni;
+                        }
+                    }
+
+                    if(eventi[i].danni_array[j].tipo == "maggiore")
+                    {
+                        var counter = 0;
+                        for(k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++ )
+                        {
+                            if(interventi_scelti.includes(eventi[i].danni_array[j].interventi[k]))
+                            {
+                                counter++;
+                            }
+                        }
+
+                        if(counter > eventi[i].danni_array[j].num_confronto)
+                        {
+                            danni += eventi[i].danni_array[j].danni;
+                        }
+                    }
+
+                    if(eventi[i].danni_array[j].tipo == "uguale")
+                    {
+                        var counter = 0;
+                        for(k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++ )
+                        {
+                            if(interventi_scelti.includes(eventi[i].danni_array[j].interventi[k]))
+                            {
+                                counter++;
+                            }
+                        }
+
+                        if(counter == eventi[i].danni_array[j].num_confronto)
+                        {
+                            danni += eventi[i].danni_array[j].danni;
+                        }
+                    }
+
+                    if(eventi[i].danni_array[j].tipo == "bonus")
+                    {
+                        danni += eventi[i].danni_array[j].danni
+                    }
+
+                }
+
+                giri_simulazione++;
+                console.log("giro completato con danni: "+danni)
+
+                
+            }
+            alert(giri_simulazione);
+
             
         });
 

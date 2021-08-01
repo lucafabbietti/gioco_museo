@@ -1,0 +1,19 @@
+[
+    {
+        "id":0,
+        "descrizione": "",
+        "danni_array":  
+        [
+            {
+                "tipo":"minore",
+                "num_confronto": 5,
+                "danni": 2,
+                "interventi": 
+                [
+                    "1a","1b"
+                ]
+
+            }
+        ]
+    }
+]
