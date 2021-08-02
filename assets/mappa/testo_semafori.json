@@ -1,0 +1,22 @@
+[
+    {
+        "id":0,
+        "semaforo": 1,
+        "img": "1",
+        "title": "Alterazione della circolazione atlantica",
+        "testi":
+        [
+            "L'Atlantic Meridional Overturning Circulation (AMOC) fa parte di una più ampia rete di circolazione oceanica che trasporta calore in tutto il mondo. Si tratta di un sistema di correnti nell'Oceano Atlantico con due componenti principali: la prima è il flusso di acqua calda e salata negli strati superiori dell'oceano verso nord partendo dal Golfo del Messico e alimentato dalla Corrente nordatlantica.","La seconda è il raffreddamento dell'acqua che avviene alle alte latitudini dell'Atlantico: l’acqua più densa affonda e ritorna verso l’equatore in profondità. Questa circolazione trasporta una grande quantità di energia termica dai tropici e dall'emisfero australe verso il Nord Atlantico trasferendo calore all'atmosfera per evaporazione.Il cambiamento climatico influisce su questo processo diluendo l'acqua salata del mare con acqua dolce attraverso l'aumento delle precipitazioni sull’Atlantico settentrionale subpolare e lo scioglimento del ghiaccio continentale soprattutto in prossimità della calotta glaciale della Groenlandia.","Questo rende l'acqua più leggera e quindi meno capace di andare in profondità rallentando così l'intero motore della circolazione.£Mentre nell'Atlantico settentrionale si potrebbe generare un generale raffreddamento, minore evaporazione e quindi meno precipitazioni, nell'Atlantico meridionale si assisterebbe a un riscaldamento con conseguente aumento delle inondazioni, delle emissioni di metano e della siccità, e, di conseguenza, un impatto negativo sulla produzione alimentare e sui sistemi umani. Potremmo osservare inoltre uno spostamento della zona di convergenza intertropicale, la grande area di bassa pressione che circonda la Terra vicino all'equatore."
+        ]
+    },
+    {
+        "id":1,
+        "semaforo": 2,
+        "img": "2",
+        "title": "Instabilità della calotta glaciale antartica occidentale",
+        "testi":
+        [
+            "La calotta glaciale antartica occidentale (WAIS) è una porzione dell’Antartide che detiene abbastanza ghiaccio per cambiare le coste di tutto il mondo. La maggior parte dei ghiacciai dell’Antartide scorrono per gravità direttamente nelle profondità dell’oceano, la linea di messa a terra è il punto in cui la loro base lascia il fondo del mare e inizia a galleggiare trasformandosi in banchisa.","Insieme allo scioglimento dal basso causato dalle calde acque oceaniche, il riscaldamento globale sta sciogliendo la calotta da sopra, provocando una maggiore fusione della superficie. Ciò consente all’acqua di penetrare in profondità nelle lastre di ghiaccio. Successivamente quest’acqua raffreddandosi, frattura ulteriormente le lastre di ghiaccio dall’interno.","Attualmente la perdita di ghiaccio dal WAIS è compensata dalla estensione (o non arretramento) di altre regioni dell’Antartide grazie alla circolazione dell'Oceano Australe.£Se collassasse la calotta glaciale antartica per effetto di eventi a cascata innescati dal continuo ritiro della linea di messa a terra nella regione occidentale, potrebbe causare un innalzamento del livello dei mari di 5 metri. La tendenza alla riduzione della salinità nelle acque antartiche alimentate dalla fusione del ghiaccio influenza la densità delle acque profonde e molto fredde che guidano le correnti oceaniche influenzando il clima in superficie ma soprattutto, potrebbero alterarsi i tempi dei cicli biologici iniziando dal fitoplancton, la base fondamentale della rete alimentare antartica."
+        ]
+    }
+]

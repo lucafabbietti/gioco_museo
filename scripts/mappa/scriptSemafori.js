@@ -1,3 +1,4 @@
+/* 
 var _semafori = "json";
 var semafori = JSON.parse(_semafori);
 var sel_semaforo = 0;
@@ -72,3 +73,37 @@ function clickIndietro()
         $("#indietro").hide();
     }
 }
+*/
+
+// ---------- //
+$(document).ready(function () {
+
+    testoSemafori = JSON.parse(_testo_semafori);
+
+});
+
+var semaforoVar = 0;
+
+function semaforo1() {
+
+    semaforoVar = 0;
+    startGame();
+
+    console.log(semaforoVar);
+    
+}
+
+
+function startGame() {
+
+    
+    for (i = 0; i < testoSemafori.length; i++) {
+        
+        $('#flag').text(testoSemafori[i].title) + $("#immagine").attr("src", "/assets/imgMappa/" + "MAP1.jpg");
+
+
+    }
+
+
+}
+    

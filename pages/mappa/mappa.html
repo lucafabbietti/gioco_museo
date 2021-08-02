@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa situazione climatica attuale</title>
+    <script src="/scripts/jquery.min.js"></script>
+
+    <script src="/assets/mappa/testo_semafori_data.js"></script>
+    <script src="/scripts/mappa/scriptSemafori.js"></script>
+
+
+</head>
+<body>
+    <style>*{
+        font-size: 30px;
+        background-color: rgba(0, 0, 0, 0.623);
+        color: white;
+    }
+    img{height: 300px;width: 300px;}
+    </style>
+
+
+    <a href="">Torna alla Home</a>
+
+     <!-- BACKGROUND MAPPA GENERALE -->
+     <!--
+     <div style="display: inline;" id="mappaGenerale">
+        <img src="/assets/imgMappa/MAP.jpg" width="1920px" height="1080px">
+    </div>
+
+-->
+
+    <div id="flag"></div>
+    <div id="textFlag"></div>
+
+
+    <button id="semaforo1_btn" onclick="semaforo1()">Prova</button>
+    <img id="immagine" src="/assets/imgMappa/MAP.jpg" />
+    <img id="avanti" src="/assets/imgMappa/right-arrow.png" alt="" onclick="avantiFunction()">
+    <img id="indietro" src="/assets/imgMappa/left-arrow.png" alt="" onclick="indietroFunction()">
+
+
+
+
+
+
+
+    
+</body>
+</html>
