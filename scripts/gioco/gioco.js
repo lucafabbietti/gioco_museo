@@ -1,4 +1,17 @@
 
+var interventi;
+var eventi;
+var interventi_scelti;
+var costo_max;
+
+var danni;
+var danni_max;
+
+var giri_simulazione;
+var tempo_giri_simulazione;
+
+var simulazione;
+
 $(document).ready(function()
 {
 
@@ -11,11 +24,12 @@ $(document).ready(function()
     danni_max = 15;
 
     giri_simulazione = 0;
+    tempo_giri_simulazione = 5000;
 
     //caricamento interventi da file json e aggiunta di righe sulla tabella
 
-    console.log(interventi);
-    console.log(eventi);
+    // console.log(interventi);
+    // console.log(eventi);
 
     for(i = 0; i < interventi.length; i++)
     {
@@ -83,7 +97,7 @@ $(document).ready(function()
 
         //aggiungo l'evento click al bottone di start
         $("#start_btn").click(function() {
-            danni = 0;
+
             //nascondo la tabella
             $("#table_master").hide();
             
@@ -91,15 +105,47 @@ $(document).ready(function()
 
             $("#paragraph_master").show();
 
-            while(danni < danni_max)
-            {
-                var i = Math.floor(Math.random() * 5);
+            simula();
 
-                console.log("random "+i);
+            
+        });
 
-                console.log(eventi[i].id)
+});
 
-                $("#paragraph_description").text(eventi[i].descrizione);
+function wait(milliseconds)
+{
+    let time = Date.now();
+    time += milliseconds;
+    while (Date.now() < time)
+        {
+                    
+        }
+}
+
+function simula()
+{
+    danni = 0;
+    simula_eventi();
+    simulazione = setInterval(simula_eventi, tempo_giri_simulazione);
+    console.log("test");
+}
+
+function simula_eventi()
+{
+
+                var i = Math.floor(Math.random() * eventi.length);
+
+                // console.log("random "+i);
+
+                // console.log(eventi[i].id)
+
+                //console.log(eventi[i].descrizione);
+                
+                document.getElementById("paragraph_description").innerHTML = eventi[i].descrizione;
+                //$("#paragraph_description").text(eventi[i].descrizione);
+                
+                
+                console.log("carica");
 
                 for(j = 0; j < eventi[i].danni_array.length; j++)
                 {
@@ -162,14 +208,17 @@ $(document).ready(function()
                 }
 
                 giri_simulazione++;
-                console.log("giro completato con danni: "+danni)
+                console.log("giro completato con danni: "+danni);
 
-                
-            }
-            alert(giri_simulazione);
+                if(danni >= danni_max)
+                {
+                    clearInterval(simulazione);
+                    end();
+                }
 
-            
-        });
+}
 
-});
-
+function end()
+{
+    console.log("fine");
+}
