@@ -12,8 +12,7 @@ var tempo_giri_simulazione;
 
 var simulazione;
 
-$(document).ready(function()
-{
+$(document).ready(function () {
 
     interventi = JSON.parse(_interventi);
     eventi = JSON.parse(_eventi);
@@ -31,194 +30,187 @@ $(document).ready(function()
     // console.log(interventi);
     // console.log(eventi);
 
-    for(i = 0; i < interventi.length; i++)
-    {
+    for (i = 0; i < interventi.length; i++) {
         var row = "";
-            
+
         //creo la nuova riga
         row += "<tr>";
 
         //aggiungo la checkbox
-        row += "<td> <input type=\"checkbox\" class=\"check\" id=\"check_"+ interventi[i].id +"\"> </td>";
+        row += "<td> <input type=\"checkbox\" class=\"check\" id=\"check_" + interventi[i].id + "\"> </td>";
         //console.log(interventi[i].id);
 
         //aggiungo il tag dell'intervento
-        row += "<td>"+ interventi[i].codice_intervento +"</td>"
+        row += "<td>" + interventi[i].codice_intervento + "</td>"
         //console.log(interventi[i].codice_intervento);
 
         //aggiungo la descrizione dell'intervento
-        row += "<td>"+ interventi[i].descrizione +"</td>"
+        row += "<td>" + interventi[i].descrizione + "</td>"
         //console.log(interventi[i].descrizione);
 
         //aggiungo il costo dell'intervento
-        row += "<td>"+ interventi[i].costo +"</td>"
+        row += "<td>" + interventi[i].costo + "</td>"
         //console.log(interventi[i].costo);
 
         //console.log(row);
-        
+
         //aggiungo la riga alla tabella
-        $("#table").append(row);       
+        $("#table").append(row);
     }
 
-        //aggiungo l'evento click a tutte le checkbox
+    //aggiungo l'evento click a tutte le checkbox
 
-        $(".check").click(function() {
-            var costo = 0;
-            interventi_scelti = [];
+    $(".check").click(function () {
+        var costo = 0;
+        interventi_scelti = [];
 
-            //controllo quale checkbox è selezionata ciclandole tutte, 
-            //poi in base a quale è selezionata calcolo il prezzo sommandole,
-            //poi aggiungo i relativi codici a un vettore
+        //controllo quale checkbox è selezionata ciclandole tutte, 
+        //poi in base a quale è selezionata calcolo il prezzo sommandole,
+        //poi aggiungo i relativi codici a un vettore
 
-            for(i = 0; i < interventi.length; i++)
-            {
-                if($("#check_"+i).is(":checked"))
-                {
-                    costo += interventi[i].costo;
-                    interventi_scelti.push(interventi[i].codice_intervento);
-                }
+        for (i = 0; i < interventi.length; i++) {
+            if ($("#check_" + i).is(":checked")) {
+                costo += interventi[i].costo;
+                interventi_scelti.push(interventi[i].codice_intervento);
             }
+        }
 
-            //se il costo totale è superiore a 80000, comunico all'utente l'errore,
-            //tutte le checkbox diventano unchecked e azzero il costo.
-            if(costo > costo_max)
-            {
-                alert("Hai superato il budget di "+costo_max+"! Seleziona gli interventi con più attenzione!");
-                $(".check").prop( "checked", false );
-                costo = 0;
-            }
+        //se il costo totale è superiore a 80000, comunico all'utente l'errore,
+        //tutte le checkbox diventano unchecked e azzero il costo.
+        if (costo > costo_max) {
+            alert("Hai superato il budget di " + costo_max + "! Seleziona gli interventi con più attenzione!");
+            $(".check").prop("checked", false);
+            costo = 0;
+        }
 
-            
 
-            //mostro il prezzo attuale sulla casella di testo
-            $("#costo_totale").text(costo);
 
-        });
+        //mostro il prezzo attuale sulla casella di testo
+        $("#costo_totale").text(costo);
 
-        //aggiungo l'evento click al bottone di start
-        $("#start_btn").click(function() {
+    });
 
-            //nascondo la tabella
-            $("#table_master").hide();
-            
-            //avvio la simulazione
+    //aggiungo l'evento click al bottone di start
+    $("#start_btn").click(function () {
 
-            $("#paragraph_master").show();
+        //nascondo la tabella
+        $("#table_master").hide();
 
-            simula();
+        //avvio la simulazione
 
-            
-        });
+        $("#paragraph_master").show();
+
+        simula();
+
+    });
 
 });
 
-function wait(milliseconds)
-{
+function wait(milliseconds) {
     let time = Date.now();
     time += milliseconds;
-    while (Date.now() < time)
-        {
-                    
-        }
+    while (Date.now() < time) {
+
+    }
 }
 
-function simula()
-{
+function simula() {
     danni = 0;
     simula_eventi();
     simulazione = setInterval(simula_eventi, tempo_giri_simulazione);
-    console.log("test");
 }
 
-function simula_eventi()
-{
+function simula_eventi() {
 
-                var i = Math.floor(Math.random() * eventi.length);
+    var i = Math.floor(Math.random() * eventi.length);
 
-                // console.log("random "+i);
+    // console.log("random "+i);
 
-                // console.log(eventi[i].id)
+    // console.log(eventi[i].id)
 
-                //console.log(eventi[i].descrizione);
-                
-                document.getElementById("paragraph_description").innerHTML = eventi[i].descrizione;
-                //$("#paragraph_description").text(eventi[i].descrizione);
-                
-                
-                console.log("carica");
+    //console.log(eventi[i].descrizione);
 
-                for(j = 0; j < eventi[i].danni_array.length; j++)
-                {
-                    if(eventi[i].danni_array[j].tipo == "minore")
-                    {
-                        var counter = 0;
-                        for(k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++ )
-                        {
-                            if(interventi_scelti.includes(eventi[i].danni_array[j].interventi[k]))
-                            {
-                                counter++;
-                            }
-                        }
+    document.getElementById("paragraph_description").innerHTML = eventi[i].descrizione;
+    //$("#paragraph_description").text(eventi[i].descrizione);
 
-                        if(counter < eventi[i].danni_array[j].num_confronto)
-                        {
-                            danni += eventi[i].danni_array[j].danni;
-                        }
+
+    //console.log("evento iniziato");
+
+    for (j = 0; j < eventi[i].danni_array.length; j++) {
+        switch (eventi[i].danni_array[j].tipo) {
+            case "minore":
+                var counter = 0;
+                for (k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++) {
+                    if (interventi_scelti.includes(eventi[i].danni_array[j].interventi[k])) {
+                        counter++;
                     }
-
-                    if(eventi[i].danni_array[j].tipo == "maggiore")
-                    {
-                        var counter = 0;
-                        for(k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++ )
-                        {
-                            if(interventi_scelti.includes(eventi[i].danni_array[j].interventi[k]))
-                            {
-                                counter++;
-                            }
-                        }
-
-                        if(counter > eventi[i].danni_array[j].num_confronto)
-                        {
-                            danni += eventi[i].danni_array[j].danni;
-                        }
-                    }
-
-                    if(eventi[i].danni_array[j].tipo == "uguale")
-                    {
-                        var counter = 0;
-                        for(k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++ )
-                        {
-                            if(interventi_scelti.includes(eventi[i].danni_array[j].interventi[k]))
-                            {
-                                counter++;
-                            }
-                        }
-
-                        if(counter == eventi[i].danni_array[j].num_confronto)
-                        {
-                            danni += eventi[i].danni_array[j].danni;
-                        }
-                    }
-
-                    if(eventi[i].danni_array[j].tipo == "bonus")
-                    {
-                        danni += eventi[i].danni_array[j].danni
-                    }
-
                 }
 
-                giri_simulazione++;
-                console.log("giro completato con danni: "+danni);
-
-                if(danni >= danni_max)
-                {
-                    clearInterval(simulazione);
-                    end();
+                if (counter < eventi[i].danni_array[j].num_confronto) {
+                    danni += eventi[i].danni_array[j].danni;
                 }
+                break;
+
+            case "maggiore":
+                var counter = 0;
+                for (k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++) {
+                    if (interventi_scelti.includes(eventi[i].danni_array[j].interventi[k])) {
+                        counter++;
+                    }
+                }
+
+                if (counter > eventi[i].danni_array[j].num_confronto) {
+                    danni += eventi[i].danni_array[j].danni;
+                }
+                break;
+
+            case "uguale":
+                var counter = 0;
+                for (k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++) {
+                    if (interventi_scelti.includes(eventi[i].danni_array[j].interventi[k])) {
+                        counter++;
+                    }
+                }
+
+                if (counter == eventi[i].danni_array[j].num_confronto) {
+                    danni += eventi[i].danni_array[j].danni;
+                }
+                break;
+
+            case "bonus":
+                danni += eventi[i].danni_array[j].danni;
+                break;
+
+            case "non_selezionato":
+                var counter = 0;
+                for (k = 0; k < eventi[i].danni_array[j].interventi.lenght; k++) {
+                    if (interventi_scelti.includes(eventi[i].danni_array[j].interventi[k])) {
+                        counter++;
+                    }
+                }
+
+                if (counter == 0) {
+                    danni += eventi[i].danni_array[j].danni;
+                }
+                break;
+
+            default:
+                console.log("id:" + eventi[i].id + " danno: " + eventi[i].danni_array[j] + " da sistemare");
+                break;
+        }
+
+    }
+
+    giri_simulazione++;
+    //console.log("giro completato con danni: " + danni);
+
+    if (danni >= danni_max) {
+        clearInterval(simulazione);
+        end();
+    }
 
 }
 
-function end()
-{
+function end() {
     console.log("fine");
 }
