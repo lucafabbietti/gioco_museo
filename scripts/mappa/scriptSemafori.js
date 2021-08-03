@@ -82,28 +82,48 @@ $(document).ready(function () {
 
 });
 
-var semaforoVar = 0;
 
-function semaforo1() {
 
-    semaforoVar = 0;
+var buttonCounter = 0;
+
+function clickAvanti() {
+    buttonCounter++;
+    console.log('clickavanti '+buttonCounter)
     startGame();
-
-    console.log(semaforoVar);
-    
 }
 
+/*
+function semaforo(param) {
+    startGame(param);
+}
+*/
 
-function startGame() {
+function startGame(param) {
 
-    
-    for (i = 0; i < testoSemafori.length; i++) {
+
+    $('#flag').text(testoSemafori[param].title);
+    $('#textFlag').text(testoSemafori[param].testi);
+
+    if (buttonCounter == 1) {
+        console.log('porcodio');
+
         
-        $('#flag').text(testoSemafori[i].title) + $("#immagine").attr("src", "/assets/imgMappa/" + "MAP1.jpg");
+    }
 
+
+
+    if (param == 0) {
+        $("#immagine").attr("src", "/assets/imgMappa/MAP.jpg");
+
+
+    } else {
+        $("#immagine").attr("src", "/assets/imgMappa/MAP" + param + ".jpg");
 
     }
 
 
+
+
+
 }
-    
+
