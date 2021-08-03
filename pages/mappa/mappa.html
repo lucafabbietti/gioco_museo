@@ -15,10 +15,12 @@
 <body>
     <style>*{
         font-size: 30px;
-        background-color: rgba(0, 0, 0, 0.623);
-        color: white;
+        background-color: rgba(0, 0, 0, 0.13);
+        color: rgb(0, 0, 0);
     }
     img{height: 300px;width: 300px;}
+    #flag{font-size: 60px;}
+
     </style>
 
 
@@ -39,11 +41,16 @@
     <button id="semaforo1_btn" onclick="semaforo(0)">semaforo 1</button>
     <button id="semaforo2_btn" onclick="semaforo(1)">semaforo 2</button>
 
+    <button id="avanti_btn" onclick="clickAvanti()">Avanti</button>
+    <button id="indietro_btn" style="display: none;" onclick="clickIndietro()">Indietro</button>
+
+    <button onclick="prova()">Proveee</button>
 
 
 
-    <img id="immagine" src="/assets/imgMappa/MAP.jpg" />
-    <img id="avanti" src="/assets/imgMappa/right-arrow.png" alt="" onclick="clickAvanti()">
+
+    <img id="immagine" src="/assets/imgMappa/MAP_SEMAFORI.jpg" />
+    <!--<img id="avanti" src="/assets/imgMappa/right-arrow.png" alt="" onclick="clickAvanti(0)"> -->
     <img id="indietro" src="/assets/imgMappa/left-arrow.png" alt="" onclick="">
 
 
