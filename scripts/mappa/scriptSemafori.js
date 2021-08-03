@@ -1,129 +1,68 @@
-/* 
-var _semafori = "json";
-var semafori = JSON.parse(_semafori);
-var sel_semaforo = 0;
-var index_paragrafo = 0;
 
-function Sel_semafori(i)
-{
-    sel_semaforo = i;
-    index_paragrafo = 0;
-    $("#paragraph_image").immagine = "C://document/porcodio/map_" + semafori[i].img + ".jpg"
-
-    if(semafori[i].testi[0].split("£").lenght > 0)
-    {
-        $("paragraph_text").text = semafori[i].testi[0].split("£")[0];
-        $("paragraph_text_conseguenze").text = semafori[i].testi[0].split("£")[1];
-    }
-    else
-    {
-        $("paragraph_text").text = semafori[i].testi[0];
-    }
-    
-    
-}
-
-function clickAvanti()
-{
-    $("#avanti").show();
-    $("#indietro").show();
-
-    if(index_paragrafo < semafori[sel_semaforo].testi.lenght)
-    {
-        index_paragrafo++;
-        if(semafori[sel_semaforo].testi[index_paragrafo].split("£").lenght > 0)
-        {
-            $("#paragraph_text").text = semafori[i].testi[index_paragrafo].split("£")[0];
-            $("#paragraph_text_conseguenze").text = semafori[i].testi[index_paragrafo].split("£")[1];
-        }
-        else
-        {
-            $("#paragraph_text").text = semafori[i].testi[index_paragrafo];
-        }
-
-    }
-
-    if(index_paragrafo == semafori[sel_semaforo].testi.lenght)
-    {
-        $("#avanti").hide();
-    }
-}
-
-function clickIndietro()
-{
-    $("#avanti").show();
-    $("#indietro").show();
-
-    if(index_paragrafo > 0)
-    {
-        index_paragrafo--;
-        if(semafori[sel_semaforo].testi[index_paragrafo].split("£").lenght > 0)
-        {
-            $("#paragraph_text").text = semafori[i].testi[index_paragrafo].split("£")[0];
-            $("#paragraph_text_conseguenze").text = semafori[i].testi[index_paragrafo].split("£")[1];
-        }
-        else
-        {
-            $("#paragraph_text").text = semafori[i].testi[index_paragrafo];
-        }
-    }
-
-    if(index_paragrafo == 0)
-    {
-        $("#indietro").hide();
-    }
-}
-*/
 
 // ---------- //
 $(document).ready(function () {
-
     testoSemafori = JSON.parse(_testo_semafori);
-
 });
 
 
-
+// FUNZIONE CONTEGGIO BOTTONI AVANTI - INDIETRO 
 var buttonCounter = 0;
+var v_semaforo = 0;
+var v_index = 0;
+
+function clickIndietro() {
+
+    v_index--;
+    console.log('lunghezza array ' + testoSemafori[v_semaforo].testi.length)
+
+    if (v_index <= 0) {
+        document.getElementById('indietro_btn').style.display = 'none'
+
+    }
+    document.getElementById('avanti_btn').style.display = 'inline'
+    console.log('indietro index ' + v_index);
+    $('#textFlag').text(testoSemafori[v_semaforo].testi[v_index]);
+
+}
+
+
 
 function clickAvanti() {
-    buttonCounter++;
-    console.log('clickavanti '+buttonCounter)
-    startGame();
+
+    v_index++;
+    console.log('lunghezza array ' + testoSemafori[v_semaforo].testi.length)
+    document.getElementById('indietro_btn').style.display = 'inline'
+
+    if (v_index >= testoSemafori[v_semaforo].testi.length - 1) {
+        document.getElementById('avanti_btn').style.display = 'none'
+
+    }
+    console.log('avanti index ' + v_index);
+
+    $('#textFlag').text(testoSemafori[v_semaforo].testi[v_index]);
+
 }
 
-/*
+
+// FUNZIONE PESCAGGIO DATI DA FILE JSON
 function semaforo(param) {
-    startGame(param);
-}
-*/
-
-function startGame(param) {
+    v_index = 0;
+    v_semaforo = param;
 
 
+    //PESCO LE IMMAGINI IN BASE AL PARAMETRO CHE PASSO
+    $("#immagine").attr("src", "/assets/imgMappa/MAP" + param + ".jpg");
     $('#flag').text(testoSemafori[param].title);
-    $('#textFlag').text(testoSemafori[param].testi);
-
-    if (buttonCounter == 1) {
-        console.log('porcodio');
-
-        
-    }
-
-
-
-    if (param == 0) {
-        $("#immagine").attr("src", "/assets/imgMappa/MAP.jpg");
-
-
-    } else {
-        $("#immagine").attr("src", "/assets/imgMappa/MAP" + param + ".jpg");
-
-    }
-
-
-
+    $('#textFlag').text(testoSemafori[param].testi[v_index]);
 
 
 }
+
+
+
+
+
+
+
 
