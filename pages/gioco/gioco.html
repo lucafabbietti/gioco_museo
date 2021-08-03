@@ -8,12 +8,22 @@
         
         <script src="../../assets/gioco/interventi_data.js"></script>
         <script src="../../assets/gioco/eventi_data.js"></script>
+        <script src="../../assets/gioco/end_data.js"></script>
 
         <script src="../../scripts/gioco/gioco.js"></script>
     </head>
 
     <body>
-        <div id="table_master">
+        <div id="paragraph_start_master">
+            <p id="paragraph_start_1">
+                Il tuo compito è amministrare una città per farla diventare RESILIENTE: hai a disposizione 80.000 coin, spendili con giudizio poi metti alla prova il tuo lavoro… non sai esattamente quali saranno gli impatti dei cambiamenti climatici sulla tua città, quanto saranno gravi o quando si verificheranno. A seconda delle scelte che avrai fatto e a seconda degli eventi climatici a cui andrai incontro, la tua città resisterà per breve o lungo tempo…
+            </p>
+            <p id="paragraph_start_2" style="display: none;">
+                La tua città si trova in collina ed è attraversata da un fiume, a qualche km di distanza si trovano alcune foreste che rendono migliore la qualità dell’aria che vi circonda e la città possiede un tessuto di piccole e medie imprese. Purtroppo negli ultimi anni, a causa di violenti temporali sempre più frequenti, la tua città ha subito spesso esondazioni del fiume con conseguenti allagamenti urbani e delle imprese locali; inoltre lunghi periodi di siccità seguiti dalle intense piogge hanno causato sempre più frane e smottamenti del territorio bloccando anche vie di comunicazione importanti; in estate i tuoi concittadini soffrono per le ondate di calore estive e per le sempre più frequenti emergenze idriche.
+            </p>
+            <button id="al_lavoro_btn" style="display: none;">Al Lavoro!</button>
+        </div>
+        <div id="table_master" style="display: none;">
             <div h1 id="costo_totale">
                 0
             </div>
@@ -39,9 +49,15 @@
                 Start
             </div>
         </div>
-        <div id="paragraph_master" style="display: none;">
-            <p id="paragraph_description">
-                test_paragrafo
+        <div id="paragraph_event_master" style="display: none;">
+            <p id="paragraph_event">
+                
+            </p>
+        </div>
+        <div id="paragraph_end_master" style="display: none;">
+            <h1>Grazie per aver giocato con noi!</h1>
+            <p id="paragraph_end">
+                
             </p>
         </div>
     </body>
