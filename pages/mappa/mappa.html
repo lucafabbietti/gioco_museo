@@ -7,58 +7,54 @@
     <title>Mappa situazione climatica attuale</title>
     <script src="/scripts/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="/styles/gioco/styleMappa.css">
     <script src="/assets/mappa/testo_semafori_data.js"></script>
     <script src="/scripts/mappa/scriptSemafori.js"></script>
 
 
+
 </head>
 <body>
-    <style>*{
-        font-size: 30px;
-        background-color: rgba(0, 0, 0, 0.13);
-        color: rgb(0, 0, 0);
-    }
-    img{height: 300px;width: 300px;}
-    #flag{font-size: 60px;}
-
-    </style>
+<!-- HOME BUTTON -->
+<a href="">Torna alla Home</a>
 
 
-    <a href="">Torna alla Home</a>
+<!-- FLAG -->
+<div class="flag" id="Flag-Testo" style="display: none;">
+    <a href="">X Chiudi</a>
+    <h1 id="title"></h1>
+    <p id="description"></p>
 
-     <!-- BACKGROUND MAPPA GENERALE -->
-     <!--
-     <div style="display: inline;" id="mappaGenerale">
-        <img src="/assets/imgMappa/MAP.jpg" width="1920px" height="1080px">
+    <!-- CONTROLLI FLAG -->
+    <div class="controlli_btn" id='Controlli-Flag' style="display: none;">
+        <div class="conseguenze-flag">
+            <button id="conseguenze" onclick="conseguenzeFunction()">Conseguenze</button>
+            <img id="avanti_btn" onclick="clickAvanti()" src="/assets/imgMappa/right-arrow.png">
+            <button id="conseguenze" onclick="conseguenzeFunction()">Conseguenze</button>
+            <button id="nascondi" onclick="nascondiFunction()">Nascondi</button>
+            <img id="indietro_btn" style="display: none;" onclick="clickIndietro()" src="/assets/imgMappa/left-arrow.png">
+            <p id="description-conseguenze"></p>
+        </div>
+    </div>
     </div>
 
--->
+<!-- SEMAFORI -->
+<div class="semafori_BTN" id="Semafori-Button">
+    <button id="semaforo1_btn" onclick="semaforo(0)">1</button>
+    <button id="semaforo2_btn" onclick="semaforo(1)">2</button>
+    <button id="semaforo3_btn" onclick="semaforo(2)">3</button>
+    <button id="semaforo4_btn" onclick="semaforo(3)">4</button>
+    <button id="semaforo5_btn" onclick="semaforo(4)">5</button>
+    <button id="semaforo6_btn" onclick="semaforo(5)">6</button>
+    <button id="semaforo7_btn" onclick="semaforo(6)">7</button>
+    <button id="semaforo8_btn" onclick="semaforo(7)">8</button>
+    <button id="semaforo9_btn" onclick="semaforo(8)">9</button>
+    <button id="semaforo10_btn" onclick="semaforo(9)">10</button>
+</div>
 
-    <div id="flag"></div>
-    <div id="textFlag"></div>
-
-
-    <button id="semaforo1_btn" onclick="semaforo(0)">semaforo 1</button>
-    <button id="semaforo2_btn" onclick="semaforo(1)">semaforo 2</button>
-
-    <button id="avanti_btn" onclick="clickAvanti()">Avanti</button>
-    <button id="indietro_btn" style="display: none;" onclick="clickIndietro()">Indietro</button>
-
-    <button onclick="prova()">Proveee</button>
-
-
-
-
+<!-- BACKGROUND -->
+<div class="background" id="Mappa-Semafori">
     <img id="immagine" src="/assets/imgMappa/MAP_SEMAFORI.jpg" />
-    <!--<img id="avanti" src="/assets/imgMappa/right-arrow.png" alt="" onclick="clickAvanti(0)"> -->
-    <img id="indietro" src="/assets/imgMappa/left-arrow.png" alt="" onclick="">
-
-
-
-
-
-
-
-    
+</div>
 </body>
 </html>
