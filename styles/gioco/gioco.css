@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.paragraph {
+    padding: 35px;
+}
+
+#paragraph_start_master {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    box-shadow: inset 17px 17px 34px rgb(240, 240, 240), inset -17px -17px 34px #707070;
+}
+
+#paragraph_start_master button {
+    position: absolute;
+    margin-top: 0px;
+    height: 20px;
+    width: 100px;
+    background-color: red;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%, -130%);
+}
