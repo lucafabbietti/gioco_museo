@@ -21,7 +21,7 @@ input,select{vertical-align:middle}
 
 
 *{
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Barlow', sans-serif;   
 }
 
 a{
@@ -47,34 +47,40 @@ img{
 
 /* POSIZIONAMENTO BOTTONI SEMAFORI */
 /* ------------------------------- */ 
-
-.semaforo1{
+.semafori_BTN button{
     position: absolute;
-    z-index: 9999;
-    top:255px;
-    left: 670px;
+    font-size: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.432);
     height: 125px;
     width: 80px;
     border: none;
-    background-color: rgba(0, 0, 0, 0.267);
 }
 
-.semaforo2{
-    position: absolute;
-    z-index: 9999;
-    top:885px;
-    left: 190px;
-    height: 125px;
-    width: 80px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.267);
-}
+/* POSITION BOTTONE SEMAFORO 1 */
+.semafori_BTN :nth-child(1){top: 255px; left: 670px; }
+/* POSITION BOTTONE SEMAFORO 2 */
+.semafori_BTN :nth-child(2){ top: 885px; left: 190px; }
+/* POSITION BOTTONE SEMAFORO 3 */
+.semafori_BTN :nth-child(3){ top: 485px; left: 570px; }
+/* POSITION BOTTONE SEMAFORO 4 */
+.semafori_BTN :nth-child(4){ top: 420px; left: 1030px; }
+/* POSITION BOTTONE SEMAFORO 5 */
+.semafori_BTN :nth-child(5){ top: 80px; left: 1675px; }
+/* POSITION BOTTONE SEMAFORO 6 */
+.semafori_BTN :nth-child(6){ top: 505px; left: 32px; }
+/* POSITION BOTTONE SEMAFORO 7 */
+.semafori_BTN :nth-child(7){ top: 355px; left: 1325px; }
+/* POSITION BOTTONE SEMAFORO 8 */
+.semafori_BTN :nth-child(8){ top: 20px; left: 665px; }
+/* POSITION BOTTONE SEMAFORO 9 */
+.semafori_BTN :nth-child(9){ top: 200px; left: 325px; }
+/* POSITION BOTTONE SEMAFORO 10 */
+.semafori_BTN :nth-child(10){ top: 325px; left: 920px; }
 
 
 /* STILIZZAZIONE FLAG INFORMATIVA */
 /* ------------------------------ */                         
-
-
 .flag{
     overflow: scroll;
     z-index: 9999;
@@ -85,64 +91,116 @@ img{
     height: 55%;
     border-radius: 20px;
     box-shadow: 10px  10px 15px black;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.75);  
 }
 
-.flag-text{
-    position: absolute;
-    margin: 20px;
-    top: 50px;
-    left: 50px;
-    width: 90%;
-}
-.flag-text h1{
-    font-size: 48px;
-    line-height: 100px;
+.flag h1{
+    margin-top: 70px;
+    padding: 10px;
+    font-size: 45px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.flag-text p{
+.flag p{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.flag button{
+    z-index: 9999;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0.795);
+    box-shadow: 5px 5px 10px black;
+    color: white; 
     font-size: 30px;
 }
-/* --- */ 
+
+.conseguenze-flag{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1;
+    justify-items: center;
+   
+}
+
+#conseguenze{
+    display: none;
+    grid-column: 2/3;
+    grid-row: 2/-3;
+}
+
+#nascondi{
+    display: none;
+    grid-column: 2/3;
+    grid-row: 2/-3;
+    background-color: transparent;
+    border: 2px solid red;
+    color: red;
+}
+
+#description-conseguenze{
+    position: absolute;
+    text-align: center;
+    margin-top: 8%;
+    padding: 10px;
+    color: red;
+    font-weight: 600;
+   
+}
+
+.conseguenze-flag img{
+    height: 70px;
+    width: 70px;
+}
+
+.flag a{
+    position: relative;
+    z-index: 9999;
+    left: 010px;
+    top: 35px;
+    border: 2px solid red;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: red;
+    font-size: 30px;
+}
+
 
 
 /* STILIZZAZIONE PULSANTI DI CONTROLLO */
 /* ----------------------------------- */  
-.controlli{
-    margin-top: 20px;
-    text-align: center;
-}
-
-.controlli button{
-    display: none;
-    position: absolute;
-    margin-top: 70px;
-    background-color: transparent;
-    position: initial;
-    border: 2px solid red;
-    padding: 20px;
-    border-radius: 10px;
-    color: red;
-    font-size: 20px;
-    width: 150px;
-}
-
-.controlli button:active{
-    background-color: red;
-    color: white;
-}
-
-.controlli p{
-    width: 100%;
-    position: absolute;
-    top: 330px;
+.controlli_btn{
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
     left: 0;
-    padding-bottom: 20px;
 }
 
-#nascondi{
-    background-color: rgba(255, 0, 0, 0.822);
-    color: white;
+.controlli_btn img{
+    height: 70px;
+    width: 70px;
 }
+
+#indietro_btn{
+    grid-column: 1/2;
+    grid-row: 2/-3;
+}
+
+#avanti_btn{
+    grid-column: 3/4;
+    grid-row: 2/-3;
+}
+
+
+
 
 /* --- */ 
