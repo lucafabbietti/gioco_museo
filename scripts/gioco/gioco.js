@@ -1,4 +1,3 @@
-
 var interventi;
 var eventi;
 var interventi_scelti;
@@ -17,7 +16,7 @@ var ritardo_end;
 
 var ritardo_par_2;
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     interventi = JSON.parse(_interventi);
     eventi = JSON.parse(_eventi);
@@ -51,7 +50,11 @@ $(document).ready(function () {
         $("#al_lavoro_btn").show();
     }, ritardo_par_2);
 
-    $("#al_lavoro_btn").click(function () {
+    $("#al_lavoro_btn").click(function() {
+
+        $("#video_start").hide();
+
+        $("#video_wip").show();
 
         $("#paragraph_start_master").hide();
 
@@ -69,15 +72,15 @@ $(document).ready(function () {
 
             //aggiungo il tag dell'intervento
             row += "<td>" + interventi[i].codice_intervento + "</td>"
-            //console.log(interventi[i].codice_intervento);
+                //console.log(interventi[i].codice_intervento);
 
             //aggiungo la descrizione dell'intervento
             row += "<td>" + interventi[i].descrizione + "</td>"
-            //console.log(interventi[i].descrizione);
+                //console.log(interventi[i].descrizione);
 
             //aggiungo il costo dell'intervento
             row += "<td>" + interventi[i].costo + "</td>"
-            //console.log(interventi[i].costo);
+                //console.log(interventi[i].costo);
 
             //console.log(row);
 
@@ -85,21 +88,21 @@ $(document).ready(function () {
             $("#table").append(row);
         }
 
-        $(".check").click(function () {
+        $(".check").click(function() {
             var costo = 0;
             interventi_scelti = [];
-    
+
             //controllo quale checkbox è selezionata ciclandole tutte, 
             //poi in base a quale è selezionata calcolo il prezzo sommandole,
             //poi aggiungo i relativi codici a un vettore
-    
+
             for (i = 0; i < interventi.length; i++) {
                 if ($("#check_" + i).is(":checked")) {
                     costo += interventi[i].costo;
                     interventi_scelti.push(interventi[i].codice_intervento);
                 }
             }
-    
+
             //se il costo totale è superiore a 80000, comunico all'utente l'errore,
             //tutte le checkbox diventano unchecked e azzero il costo.
             if (costo > costo_max) {
@@ -107,20 +110,24 @@ $(document).ready(function () {
                 $(".check").prop("checked", false);
                 costo = 0;
             }
-    
-    
-    
+
+
+
             //mostro il prezzo attuale sulla casella di testo
             $("#costo_totale").text(costo);
-    
+
         });
     });
     //aggiungo l'evento click a tutte le checkbox
 
-    
+
 
     //aggiungo l'evento click al bottone di start
-    $("#start_btn").click(function () {
+    $("#start_btn").click(function() {
+
+        $("#video_wip").hide();
+
+        $("#video_simulate").show();
 
         //nascondo la tabella
         $("#table_master").hide();
@@ -257,6 +264,10 @@ function simula_eventi() {
 function f_end() {
 
     //console.log("f_end");
+
+    $("#video_simulate").hide();
+
+    $("#video_end").show();
 
     $("#paragraph_event_master").hide();
     $("#paragraph_end_master").show();
