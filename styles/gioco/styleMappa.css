@@ -24,7 +24,6 @@ input,select{vertical-align:middle}
     font-family: 'Barlow',sans-serif; 
     cursor: none;
     color: rgb(255, 255, 255);
-  
 }
 
 a{ 
@@ -32,7 +31,7 @@ a{
     z-index: 9999;
     left: 15px;
     top: 10px;
-    background-color: #2600ff;
+    background-color: #0080ff;
     padding: 20px;
     border-radius: 10px;
     text-decoration: none;
@@ -44,11 +43,6 @@ a{
 img{
     display: block;
 }
-
-
-
-
-
 
 /* POSIZIONAMENTO BOTTONI SEMAFORI */
 /* ------------------------------- */ 
@@ -101,6 +95,7 @@ img{
     animation: myAnim 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0s 1 normal none;
 }
 
+
 .flag h1{
     
     margin-top: 70px;
@@ -109,7 +104,7 @@ img{
     font-size: 55px;
     font-weight: 700;
     text-transform: none;
-    color: #2600ff;
+    color: #0080ff;
     
     text-shadow: 5px 3px 5px #000000a4;
 
@@ -200,7 +195,7 @@ img{
 .controlli_btn{
     position: relative;
     display: inline-block;
-    top: 0px;
+    margin-top: 30px;
     margin-left: 30px;
     margin-right: 30px;
     left: 0;
