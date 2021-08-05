@@ -41,6 +41,8 @@ $(document).ready(function() {
     // console.log(interventi);
     // console.log(eventi);
 
+
+
     setTimeout(function() {
 
         $("#paragraph_start_1").hide();
