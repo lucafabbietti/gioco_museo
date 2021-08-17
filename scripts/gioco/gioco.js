@@ -34,7 +34,7 @@ $(document).ready(function() {
 
     ritardo_end = 5000;
 
-    ritardo_par_2 = 8000;
+    ritardo_par_2 = 8000; 
 
     //caricamento interventi da file json e aggiunta di righe sulla tabella
 
@@ -50,6 +50,9 @@ $(document).ready(function() {
         $("#paragraph_start_2").show();
 
         $("#al_lavoro_btn").show();
+
+
+       
     }, ritardo_par_2);
 
     $("#al_lavoro_btn").click(function() {
@@ -62,6 +65,16 @@ $(document).ready(function() {
 
         $("#table_master").show();
 
+        $(".box_start").hide();
+
+        $(".box_video_iniziale").hide();
+
+        $(".box_video_game").show();
+
+        $(".container_game").show();
+
+
+
         for (i = 0; i < interventi.length; i++) {
             var row = "";
 
@@ -73,15 +86,15 @@ $(document).ready(function() {
             //console.log(interventi[i].id);
 
             //aggiungo il tag dell'intervento
-            row += "<td>" + interventi[i].codice_intervento + "</td>"
+            row += "<td class=\"codice_intervento\">" + interventi[i].codice_intervento + "</td>"
                 //console.log(interventi[i].codice_intervento);
 
             //aggiungo la descrizione dell'intervento
-            row += "<td>" + interventi[i].descrizione + "</td>"
+            row += "<td class=\"descrizione_intervento\">" + interventi[i].descrizione + "</td>"
                 //console.log(interventi[i].descrizione);
 
             //aggiungo il costo dell'intervento
-            row += "<td>" + interventi[i].costo + "</td>"
+            row += "<td class=\"costo_intervento\">" + interventi[i].costo + "</td>"
                 //console.log(interventi[i].costo);
 
             //console.log(row);
@@ -108,7 +121,9 @@ $(document).ready(function() {
             //se il costo totale è superiore a 80000, comunico all'utente l'errore,
             //tutte le checkbox diventano unchecked e azzero il costo.
             if (costo > costo_max) {
-                alert("Hai superato il budget di " + costo_max + "! Seleziona gli interventi con più attenzione!");
+               // alert("Hai superato il budget di " + costo_max + "! Seleziona gli interventi con più attenzione!");
+                $(".max_limit").show();
+                $(".container_game").hide();
                 $(".check").prop("checked", false);
                 costo = 0;
             }
@@ -116,16 +131,25 @@ $(document).ready(function() {
 
 
             //mostro il prezzo attuale sulla casella di testo
-            $("#costo_totale").text(costo);
+            $("#costo_totale").text((costo_max - costo));
 
         });
     });
+
+    $("#button_limit").click(function() {
+        $(".max_limit").hide();
+        $(".container_game").show();
+        
+    });
+
     //aggiungo l'evento click a tutte le checkbox
 
 
 
     //aggiungo l'evento click al bottone di start
     $("#start_btn").click(function() {
+
+        $(".after_start").show();
 
         $("#video_wip").hide();
 
@@ -269,7 +293,9 @@ function f_end() {
 
     $("#video_simulate").hide();
 
-    $("#video_end").show();
+    $(".box_video_end").show();
+
+    $(".box_video_game").hide();
 
     $("#paragraph_event_master").hide();
     $("#paragraph_end_master").show();

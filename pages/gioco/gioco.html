@@ -6,7 +6,8 @@
     </title>
     <script src="../../scripts/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="../../styles/gioco/gioco.css">
+
+    <link rel="stylesheet" href="../../styles/font.css">
 
     <script src="../../assets/gioco/interventi_data.js"></script>
     <script src="../../assets/gioco/eventi_data.js"></script>
@@ -17,11 +18,99 @@
 </head>
 
 <body>
-    <video autoplay muted loop id="video_start">
-        <source src="../../assets/gioco/start.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-    <video autoplay muted loop id="video_wip" style="display: none;">
+    <div class="box_video_iniziale">
+        <video autoplay muted loop id="video_start" class="video_iniziale">
+            <source src="../../assets/gioco/Intro_pesci.mp4" type="video/mp4" >
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <div class="box_video_game" style="display: none;">
+        <video autoplay muted loop>
+            <source src="../../assets/gioco/video_intro.vegas.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <div class="box_video_end" style="display: none;">
+        <video autoplay muted>
+            <source src="../../assets/gioco/video_end.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+
+
+    <div class="box_start">
+        <div id="paragraph_start_master" class="div_start">
+            <p id="paragraph_start_1" class="paragraph">
+                Il tuo compito è amministrare una città per farla diventare RESILIENTE: hai a disposizione 80.000 coin,
+                spendili con giudizio poi metti alla prova il tuo lavoro… non sai esattamente quali saranno gli impatti
+                dei cambiamenti climatici sulla tua città,
+                quanto saranno gravi o quando si verificheranno. A seconda delle scelte che avrai fatto e a seconda
+                degli eventi climatici a cui andrai incontro, la tua città resisterà per breve o lungo tempo…
+            </p>
+            <p id="paragraph_start_2" class="paragraph" style="display: none;">
+                La tua città si trova in collina ed è attraversata da un fiume, a qualche km di distanza si trovano
+                alcune foreste che rendono migliore la qualità dell’aria che vi circonda e la città possiede un tessuto
+                di piccole e medie imprese. Purtroppo negli ultimi
+                anni, a causa di violenti temporali sempre più frequenti, la tua città ha subito spesso esondazioni del
+                fiume con conseguenti allagamenti urbani e delle imprese locali; inoltre lunghi periodi di siccità
+                seguiti dalle intense piogge hanno causato
+                sempre più frane e smottamenti del territorio bloccando anche vie di comunicazione importanti; in estate
+                i tuoi concittadini soffrono per le ondate di calore estive e per le sempre più frequenti emergenze
+                idriche.
+            </p>
+            <button id="al_lavoro_btn" style="display: none;">Al Lavoro!</button>
+        </div>
+    </div>
+
+    <div class="container_game" style="display: none;">
+        <div id="table_master" style="display: none;">
+            <div class="budget_totale">
+                <div button id="start_btn">Affronta gli eventi climatici</div>
+                <a href="../../pages/index.html">Home</a>
+                <h1>Budget: </h1>
+                <h2 id="costo_totale">80000</h2>
+                
+            </div>
+            <div table id="table">
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- qua va inserito il ciclo di creazione elementi -->
+
+            </div>
+</div>
+
+<div class="after_start" style="display: none;">
+    <div id="paragraph_event_master" class="paragraph" style="display: none;">
+        <p id="paragraph_event">
+
+        </p>
+    </div>
+    <div id="paragraph_end_master" class="paragraph" style="display: none;">
+        <h1>Grazie per aver giocato con noi!</h1>
+
+        <p id="paragraph_end"></p>
+        <a href="../../pages/index.html">Home</a>
+    </div>
+</div>
+</div>
+<div class="max_limit" style="display: none;">
+    <h1>Hai Superato il Budget</h1>
+    <button id="button_limit">Riprova</button>
+</div>
+
+<link rel="stylesheet" href="../../styles/gioco/gioco.css">
+</body>
+
+</html>
+<!-- <video autoplay muted loop id="video_wip" style="display: none;">
         <source src="../../assets/gioco/wip.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
@@ -33,55 +122,5 @@
         <source src="../../assets/gioco/end.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-    <div id="paragraph_start_master">
-        <p id="paragraph_start_1" class="paragraph">
-            Il tuo compito è amministrare una città per farla diventare RESILIENTE: hai a disposizione 80.000 coin, spendili con giudizio poi metti alla prova il tuo lavoro… non sai esattamente quali saranno gli impatti dei cambiamenti climatici sulla tua città,
-            quanto saranno gravi o quando si verificheranno. A seconda delle scelte che avrai fatto e a seconda degli eventi climatici a cui andrai incontro, la tua città resisterà per breve o lungo tempo…
-        </p>
-        <p id="paragraph_start_2" class="paragraph" style="display: none;">
-            La tua città si trova in collina ed è attraversata da un fiume, a qualche km di distanza si trovano alcune foreste che rendono migliore la qualità dell’aria che vi circonda e la città possiede un tessuto di piccole e medie imprese. Purtroppo negli ultimi
-            anni, a causa di violenti temporali sempre più frequenti, la tua città ha subito spesso esondazioni del fiume con conseguenti allagamenti urbani e delle imprese locali; inoltre lunghi periodi di siccità seguiti dalle intense piogge hanno causato
-            sempre più frane e smottamenti del territorio bloccando anche vie di comunicazione importanti; in estate i tuoi concittadini soffrono per le ondate di calore estive e per le sempre più frequenti emergenze idriche.
-        </p>
-        <button id="al_lavoro_btn" style="display: none;">Al Lavoro!</button>
-    </div>
-    <div id="table_master" style="display: none;">
-        <div h1 id="costo_totale">
-            0
-        </div>
-        <div table id="table">
-            <tr>
-                <td>
-                    Checkboxes
-                </td>
-                <td>
-                    N. Intervento
-                </td>
-                <td>
-                    Tipo di Intervento
-                </td>
-                <td>
-                    Costo Intervento
-                </td>
-            </tr>
-            <!-- qua va inserito il ciclo di creazione elementi -->
 
-        </div table>
-        <div button id="start_btn">
-            Start
-        </div>
-    </div>
-    <div id="paragraph_event_master" class="paragraph" style="display: none;">
-        <p id="paragraph_event">
-
-        </p>
-    </div>
-    <div id="paragraph_end_master" class="paragraph" style="display: none;">
-        <h1>Grazie per aver giocato con noi!</h1>
-        <p id="paragraph_end">
-
-        </p>
-    </div>
-</body>
-
-</html>
+    -->

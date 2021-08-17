@@ -1,4 +1,4 @@
-var redirect_time = 120000;
+var redirect_time = 120000;  
 var url_redirect = "../index.html"
 
 var initial = setTimeout(redirect, redirect_time);

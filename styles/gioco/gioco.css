@@ -1,31 +1,319 @@
-* {
+/*
+*  html5resetcss
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+
+/* END CSS RESET */
+
+*{
+    font-family: 'Barlow',sans-serif; 
+    cursor: none;
+    color: rgb(8, 8, 8);
+    font-weight: 700;
+    font-size: 40px;
+
+    /* DISABLE TEXT SELECTION */
+    -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/* STILIZZAZIONE FLAG INFORMATIVA */
+/* ------------------------------ */    
+
+.box_start{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_start{
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    width: 65%;
+    height: auto;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 0 2px 20px 10px rgba(7, 7, 8, 0.966);
+    background: transparent;
+    backdrop-filter: blur( 5px );
+}
+
+.div_start p{
+    font-size: 40px;
+    margin: 25px;
+    font-weight: 700;
+    text-transform: none;
+    color: #0080ff;
+    color: white;
+    text-shadow: 5px 3px 5px #000000a4;
+    line-height: 45px;
+}
+
+.div_start button{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    box-shadow: 5px 5px 10px black;
+    background-color: #0080ff;
+}
+
+/* STILIZZAZIONE VIDEO */
+/* ------------------- */    
+
+.box_video_iniziale video{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
 
-.paragraph {
-    padding: 35px;
+.box_video_game video{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+ 
 }
 
-#paragraph_start_master {
-    width: 500px;
-    height: auto;
+.box_video_end video{
+    margin: 0;
+    padding: 0;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    background-color: #e0e0e0;
-    box-shadow: inset 17px 17px 34px rgb(240, 240, 240), inset -17px -17px 34px #707070;
+ 
 }
 
-#paragraph_start_master button {
+/* STILIZZAZIONE AL LAVORO */
+/* ------------------------------ */    
+
+#table{
+    border-radius: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container_game{
     position: absolute;
-    margin-top: 0px;
-    height: 20px;
-    width: 100px;
-    background-color: red;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#table_master{ 
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 100vh;
+    overflow: scroll; 
+}
+
+#table{
+    position: relative;
+    top: 100px;
+    color: green;
+    font-weight: 900;
+    line-height: 50px;
+    font-size: 35px;
+}
+
+.check{
+    margin-right: 60px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 30px;
+    width: 30px;
+}
+
+.costo_intervento {
+    color: rgb(255, 7, 7);
+}
+
+.descrizione_intervento{
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: white;
+    padding: 30px;
+}
+
+.codice_intervento{
+    color: rgb(0, 211, 0);
+}
+
+.budget_totale{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: -25;
+    padding: 10px;
+    width: 100%;
+    z-index: 9999;
+    position: fixed;
+    font-size: 60px;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+
+}
+
+.budget_totale h1{
+    position: relative;
+    left: 300px;
+    color: white;
+    font-weight: 600;
+    font-size: 60px;
+    text-shadow: 5px 5px 10px black;
+}
+
+.budget_totale h2{
+    position: relative;
+    left: 300px;
+    margin-left: 30px;
+    color: #0080ff;
+    text-shadow: 5px 5px 10px black;
+}
+
+/* STILIZZAZIONE MAX LIMIT */
+/* ------------------------------ */    
+
+.max_limit{ 
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 150px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.787);
+    backdrop-filter: blur(10px);
+}
+
+.max_limit button{
+    margin: 20px;
+    padding: 10px;
+    border-radius:10px;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-transform: uppercase;
+    background-color: #09ee01;
+}
+
+.max_limit h1{
+    color: red;
+    font-size: 90px;
+}
+
+
+/* STILIZZAZIONE START BUTTON */
+/* ------------------------------ */ 
+
+#start_btn{
+    position: relative;
+    right: 150px;
+    color: white;
+    padding: 10px;
     border-radius: 10px;
-    left: 50%;
-    transform: translate(-50%, -130%);
+    text-decoration: none;
+    font-size: 40px;
+    box-shadow: 5px 5px 10px black;
+    background-color: rgb(0, 211, 0);
 }
+
+.budget_totale a{
+    position: relative;
+    right: 960px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 40px;
+    box-shadow: 5px 5px 10px black;
+    background-color: #0080ff;
+}
+
+/* STILIZZAZIONE AFTER START */
+/* ------------------------------ */ 
+
+.after_start{
+    text-align: center;  
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    line-height: 60px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    width: 60%;
+    height: auto;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 0 2px 20px 10px rgba(7, 7, 8, 0.966);
+    background-color: rgba(255, 255, 255, 0.075);
+    backdrop-filter: blur( 5px );
+}
+
+
+.after_start p,h1,a{
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.after_start p{
+    margin-bottom: 15px;
+    text-shadow: 5px 5px 10px black;
+}
+
+.after_start a{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    text-transform: uppercase;
+    background-color: #0080ff;
+}
+
+#paragraph_end_master h1{
+    color: #0080ff;
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 10px black;
+}
+
